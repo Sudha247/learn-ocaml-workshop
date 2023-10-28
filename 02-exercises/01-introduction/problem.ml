@@ -18,4 +18,4 @@
 
    You can also execute code in utop directly. Try pasting this line of code
    into utop and running it there. *)
-let () = Stdio.printf "Hello, World!
+let () = Stdio.printf "Hello, World!"

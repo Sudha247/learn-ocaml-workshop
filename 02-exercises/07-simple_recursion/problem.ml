@@ -8,7 +8,7 @@ open! Base
    Now change "let" to "let rec" and recompile.
 *)
 
-let add_every_number_up_to x =
+let rec add_every_number_up_to x =
   (* make sure we don't call this on negative numbers! *)
   assert (x >= 0);
   match x with
@@ -19,7 +19,10 @@ let add_every_number_up_to x =
 (* Let's write a function to multiply every number up to x. Remember: [factorial 0] is 1 *)
 let rec factorial x =
   assert (x >= 0);
-  failwith "For you to implement"
+  match x with
+  | 0 -> 1
+  | 1 -> 1
+  | x -> x * factorial (x - 1)
 ;;
 
 let%test "Testing factorial..." = Int.( = ) 1 (factorial 0)

@@ -16,8 +16,8 @@ open! Base
    Let's rewrite simpler_sum and simpler_product using List.fold
 *) 
 
-let simpler_sum xs = failwith "For you to implement"
-let simpler_product xs = failwith "For you to implement"
+let simpler_sum xs = List.fold ~init:0 ~f:(fun x y -> x + y) xs
+let simpler_product xs = List.fold ~init:1 ~f:(fun x y -> x * y) xs
 
 (* List.map
 
@@ -31,7 +31,7 @@ let simpler_product xs = failwith "For you to implement"
    it into a float list
 *)
 
-let float_of_int xs = failwith "For you to implement"
+let float_of_int xs = List.map ~f:(fun x -> Float.of_int x) xs
 
 (* List.init
 
@@ -44,7 +44,7 @@ let float_of_int xs = failwith "For you to implement"
    Let's rewrite the range function we wrote in problem 9 to use [init]
 *)
 
-let range from to_ = failwith "For you to implement"
+let range from to_ = List.init (to_ - from) ~f:(fun i -> from + i)
 
 (* List.range
 
@@ -70,7 +70,7 @@ let range from to_ = failwith "For you to implement"
    Lets use [iter] to print a list of ints
 *)
 
-let print_int_list xs = failwith "For you to implement"
+let print_int_list xs = List.iter ~f:(fun p -> Stdlib.print_int p) xs
 
 (* There are many more useful List functions but a couple that are worth noting are
 

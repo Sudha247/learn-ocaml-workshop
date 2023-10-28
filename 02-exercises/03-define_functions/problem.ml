@@ -26,10 +26,10 @@ let string_append x y = x ^ y
 
 (* Let's define our own functions using +, -, *, and / below. *)
 
-let plus x y = failwith "For you to implement"
-let times x y = failwith "For you to implement"
-let minus x y = failwith "For you to implement"
-let divide x y = failwith "For you to implement"
+let plus x y = x + y
+let times x y = x * y
+let minus x y = x - y
+let divide x y = x / y
 
 let%test "Testing plus..." = Int.( = ) 2 (plus 1 1)
 let%test "Testing plus..." = Int.( = ) 49 (plus (-1) 50)

@@ -19,6 +19,10 @@ let () =
    Your function should iterate over the list and maintain refs of the
    minimum and maximum values seen so far.  *)
 let min_and_max lst =
+  let min = ref (List.hd lst) in
+  let max = ref (List.hd lst) in
+  List.iter ~f:(fun x -> if x < !min then min := x; if x > !max then max := x) lst;
+  !min, !max
   failwith "For you to implement"
 
 let%test "Testing min_and_max..." =

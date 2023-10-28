@@ -44,7 +44,10 @@ let card_value_to_string card_value =
 (* Write a function that computes the score of a card (aces should score 11
    and face cards should score 10). *)
 let card_value_to_score card_value =
-  failwith "For you to implement"
+  match card_value with
+  | Ace -> 11
+  | King | Queen | Jack -> 10
+  | Number i -> i
 
 let%test "Testing card_value_to_score..." =
   Int.(=) 11 (card_value_to_score Ace)

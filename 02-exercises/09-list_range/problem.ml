@@ -19,7 +19,8 @@ let () =
 
    val range : int -> int -> int list
 *)
-let range from to_ = failwith "For you to implement"
+let range from to_ =
+   
 
 (* Here's a different way of getting the [equal] function for a type [t]:
 
